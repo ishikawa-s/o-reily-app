@@ -1,9 +1,9 @@
 
 if(window.innerWidth && window.innerWidth <= 480){
-	$(document).ready{function(){
+	$(document).ready(function(){
 		$('#header ul').addClass('hide');
 		$('#header').append('<div class="leftButton" onclick="toggleMenu()">メニュー</div>');
-	}};
+	)};
 
 	function toggleMenu(){
 		$('#header ul').togleClass('hide');
