@@ -48,6 +48,10 @@ body {
 	padding: 10px;
 }
 
+#sidebar img{
+	max-width: 100px;
+}
+
 #footer {
 	display: none;
 }
