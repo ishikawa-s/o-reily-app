@@ -52,6 +52,10 @@ body {
 	-webkit-border-image: url(images/button.png) 0 8 0 8;
 }
 
+#header div.pressed {
+	-webkit-border-image: url(images/button_clicked.png) 0 8 0 8;
+}
+
 #header ul li a {
 	background-color: #FFFFFF;
 	border: 1px solid #999999;
