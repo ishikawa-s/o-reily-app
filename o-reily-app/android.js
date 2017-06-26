@@ -8,7 +8,7 @@ function loadPage(url){
 	$('body').append('<div id="progress">読みこみ中...</div>');
 	scrollTo(0,0);
 	if(url == startUrl){
-		var element = ' #header ul';
+		var element = ' #header';
 	}else{
 		var element = ' #content';
 	}
