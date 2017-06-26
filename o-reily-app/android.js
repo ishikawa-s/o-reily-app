@@ -1,4 +1,4 @@
-var starturl = 'index.html'
+var starturl = 'index.html';
 
 $(document).ready(function(){
 	loadPage(starturl);
