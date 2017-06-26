@@ -1,25 +1,38 @@
+var hist = [];
+var startUrl = 'index.html';
+
 $(document).ready(function(){
-	loadPage();
+	loadPage(startUrl);
 });
 function loadPage(url){
 	$('body').append('<div id="progress">読みこみ中...</div>');
 	scrollTo(0,0);
-	if(url == undefined){
-		$('#container').load('index.html #header ul', hijackLinks);
+	if(url == startUrl){
+		var element = ' #header ul';
 	}else{
-		$('#container').load(url + '#content', hijackLinks);
+		var element = ' #content';
 	}
-}
-function hijackLinks(){
-	$('#container a').click(function(e){
-		var url = e.target.href;
-		if(url.match(/192.168.15.180/)){
-			e.preventDefault();
-			loadPage(e.target.href);
+	$('#container').load(url + element, function(){
+		var title = $('h2').html() || 'こんにちは';
+		$('h1').html(title);
+		$('h2').remove();
+		$('.leftButton').remove();
+		hist.unshift({'url':url, 'title':title});
+		if(hist.length > 1){
+			$('#header').append('<div class="leftButton">'+hist[1].title+'</div>');
+			$('#header .leftButton').click(function(){
+				var thisPage = hist.shift();
+				var previousPage = hist.shift();
+				loadPage(previousPage.url);
+			});
 		}
-	});
-	var title = $('h2').html() || 'こんにちは';
-	$('h1').html(title);
-	$('h2').remove();
+		$('#container a').click(function(e){
+			var url = e.target.href;
+			if(url.match(/192.168.15.180/)){
+				e.preventDefault();
+				loadPage(url);
+			}
+		});
 	$('#progress').remove();
+	});
 }
