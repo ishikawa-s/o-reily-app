@@ -2,6 +2,7 @@ $(document).ready(function(){
 	loadPage();
 });
 function loadPage(url){
+	$('body').append('<div id="progress">読みこみ中...</div>');
 	if(url == undefined){
 		$('#container').load('index.html #header ul', hijackLinks);
 	}else{
@@ -13,4 +14,5 @@ function hijackLinks(){
 		e.preventDefault();
 		loadPage(e.target.href);
 	});
+	$('#progress').remove();
 }
