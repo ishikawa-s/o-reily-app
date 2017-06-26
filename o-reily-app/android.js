@@ -1,11 +1,9 @@
-var starturl = 'index.html';
-
 $(document).ready(function(){
-	loadPage(starturl);
+	loadPage();
 });
 function loadPage(url){
 	$('body').append('<div id="progress">読みこみ中...</div>');
-	if(url == starturl){
+	if(url == undefined){
 		$('#container').load('index.html #header ul', hijackLinks);
 	}else{
 		$('#container').load(url + '#content', hijackLinks);
