@@ -14,5 +14,8 @@ function hijackLinks(){
 		e.preventDefault();
 		loadPage(e.target.href);
 	});
+	var title = $('h2').html() || 'こんにちは';
+	$('h1').html(title);
+	$('h2').remove();
 	$('#progress').remove();
 }
