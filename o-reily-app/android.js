@@ -6,7 +6,7 @@ if(window.innerWidth && window.innerWidth <= 480){
 	});
 
 	function toggleMenu(){
-		$('#header ul').togleClass('hide');
+		$('#header ul').toggleClass('hide');
 		$('#header .leftButton').toggleClass('pressed');
 	}
 }
