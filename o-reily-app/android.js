@@ -2,7 +2,7 @@ $(document).ready(function(){
 	loadPage();
 });
 function loadPage(url){
-	if(url == undifined){
+	if(url == undefined){
 		$('#container').load('index.html #header ul', hijackLinks);
 	}else{
 		$('#container').load(url + '#content', hijackLinks);
