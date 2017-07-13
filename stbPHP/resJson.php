@@ -9,8 +9,8 @@ if(!$con){
 $query = "SELECT name, deadend_id, deadend, detail FROM todo;";
 $res = mysqli_query($query);
 if(!$res){
-	echo mysqli_errno($con).PHP_EOL;
-	echo mysqli_error($con).PHP_EOL;
+	echo mysqli_sqlstate().PHP_EOL;
+//	echo mysqli_error().PHP_EOL;
 }
 
 $output=array();
