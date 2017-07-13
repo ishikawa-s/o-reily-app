@@ -6,7 +6,7 @@ if(!$con){
 	echo mysqli_connect_errno().PHP_EOL.'\n';
 	echo mysqli_connect_error().PHP_EOL.'\n';
 }
-$query = "SELECT name, deadened_id, deadend, detail FROM todo;";
+$query = "SELECT name, deadend_id, deadend, detail FROM todo;";
 $res = mysql_query($query);
 $output=array();
 var_dump($res);
