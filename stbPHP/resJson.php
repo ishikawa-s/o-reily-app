@@ -10,18 +10,15 @@ $query = "SELECT name, deadend_id, deadend, detail FROM todo;";
 $res = mysqli_query($query);
 if(!$res){
 	echo mysqli_sqlstate().PHP_EOL;
-//	echo mysqli_error().PHP_EOL;
 }
 
 $output=array();
 
-for($i=0; $i<=$output.length; $i++){
-	var_dump($output[i]);
-}
 }catch (PDOException $e){
 	var_dump($e);
 }
 while($e=mysqli_fetch_assoc($res)){$output[]=$e;}
+var_dump($output);
 mysqli_free_result($res);
 mysqli_close($con);
 
