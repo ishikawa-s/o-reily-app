@@ -1,5 +1,5 @@
 <?php
-echo ('okok');
+console.log('okok');
 try{
 $con = mysqli_connect('localhost','root','irodoriha37E','ToDoon');
 $db_sel = mysqli_select_db('todo', $con);
