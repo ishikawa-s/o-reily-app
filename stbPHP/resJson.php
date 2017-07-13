@@ -3,8 +3,8 @@ try{
 $con = mysqli_connect('192.168.15.180','root','irodoriha37E','ToDoon');
 $db_sel = mysqli_select_db('todo', $con);
 if(!$con){
-	echo mysqli_connect_errno().PHP_EOL;
-	echo mysqli_connect_error().PHP_EOL;
+	echo mysqli_connect_errno().PHP_EOL.'\n';
+	echo mysqli_connect_error().PHP_EOL.'\n';
 }
 $query = "SELECT name, deadened_id, deadend, detail FROM todo;";
 $res = mysql_query($query);
