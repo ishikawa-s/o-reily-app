@@ -1,6 +1,6 @@
 <?php
 try{
-$con = mysqli_connect('192.168.15.180','root','irodoriha37E','ToDoon');
+$con = mysqli_connect('localhost','root','irodoriha37E','ToDoon');
 $db_sel = mysqli_select_db('todo', $con);
 if(!$con){
 	echo mysqli_connect_errno().PHP_EOL.'\n';
