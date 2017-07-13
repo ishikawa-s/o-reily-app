@@ -1,5 +1,5 @@
 <?php
-console.log("okok");
+echo ("okok");
 
 try{
 $con = mysqli_connect('localhost','root','irodoriha37E','ToDoon');
