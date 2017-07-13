@@ -7,11 +7,13 @@ if(!$con){
 	echo mysqli_connect_error().PHP_EOL.'\n';
 }
 $query = "SELECT name, deadend_id, deadend, detail FROM todo;";
-$res = mysql_query($query);
-$output=array();
+$res = mysqli_query($query);
 if(!$res){
 	echo "クエリ失敗";
 }
+
+$output=array();
+
 for($i=0; $i<=$output.length; $i++){
 	var_dump($output[i]);
 }
