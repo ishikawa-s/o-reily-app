@@ -10,8 +10,8 @@ $query = "SELECT name, deadend_id, deadend, detail FROM todo;";
 $res = mysqli_query($query);
 if(!$res){
 	echo "クエリ失敗";
-	echo mysqli_connect_errno().PHP_EOL.'\n';
-	echo mysqli_connect_error().PHP_EOL.'\n';
+	echo mysqli_connect_errno().PHP_EOL;
+	echo mysqli_connect_error().PHP_EOL;
 }
 
 $output=array();
