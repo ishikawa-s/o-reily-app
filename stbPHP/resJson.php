@@ -9,7 +9,9 @@ if(!$con){
 $query = "SELECT name, deadend_id, deadend, detail FROM todo;";
 $res = mysql_query($query);
 $output=array();
-var_dump($res);
+if(!$res){
+	echo "クエリ失敗";
+}
 for($i=0; $i<=$output.length; $i++){
 	var_dump($output[i]);
 }
