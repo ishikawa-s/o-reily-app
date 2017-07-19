@@ -1,25 +1,23 @@
 <?php
 try{
-$con = mysqli_connect('localhost','root','irodoriha37E','ToDoon');
-$db_sel = mysqli_select_db('todo', $con);
-if(!$con){
-	echo mysqli_connect_errno().PHP_EOL.'\n';
-	echo mysqli_connect_error().PHP_EOL.'\n';
-}
-$query = "SELECT name, deadend_id, deadend, detail FROM todo;";
-$res = mysqli_query($query);
-if(!$res){
-	echo mysqli_sqlstate().PHP_EOL;
-}
+	$con = new mysqli('localhost','tw_ishikawa','ishikawa','Todo');
+	if($con->connect_error){
+		die('Error:'.$con->connect_errno. $con->connect_error);
+	}
 
-$output=array();
+	$output=[];
 
+	//echo $_POST;
+	$tbl = $_POST['tbl'];
+	//echo $tbl;
+	$query = "SELECT name, deadend_id, deadend, detail FROM ". $tbl .";";
+	if($res = $con->query($query)){
+		while($row = $res->fetch_assoc()){
+			$output[]=$row;
+		}
+		$res->close();
+	}
 }catch (PDOException $e){
-	var_dump($e);
 }
-while($e=mysqli_fetch_assoc($res)){$output[]=$e;}
-var_dump($output);
-mysqli_free_result($res);
-mysqli_close($con);
-
-echo json_encode($output);
+$con->close();
+echo json_encode($output, JSON_UNESCAPED_UNICODE);
